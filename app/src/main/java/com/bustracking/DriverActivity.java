@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +28,13 @@ public class DriverActivity extends AppCompatActivity {
 
         textView = findViewById(R.id.driverWelcomeText);
         mAuth = FirebaseAuth.getInstance();
+
+        ImageView profileImage = findViewById(R.id.profileImage);
+
+        profileImage.setOnClickListener(v -> {
+            Intent intent = new Intent(DriverActivity.this, ProfileActivity.class);
+            startActivity(intent);
+        });
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
@@ -74,4 +82,6 @@ public class DriverActivity extends AppCompatActivity {
         FirebaseAuth.getInstance().signOut();
         finish(); // Or redirect to login screen
     }
+
+
 }
