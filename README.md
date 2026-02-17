@@ -12,7 +12,9 @@ The **Bus Tracking App** is developed using:
 
 - **Java (Core Android Development)**
 - **Android Studio**
-- **Google Maps API**
+- **WebView Integration for Map Rendering**
+- **Leaflet.js (JavaScript Mapping Library)**
+- **OpenStreetMap (Map Data Provider)**
 - **Location Services (GPS / Fused Location Provider)**
 
 The app provides a real-time visualization of bus movement on a map interface.
@@ -37,8 +39,9 @@ The app provides a real-time visualization of bus movement on a map interface.
 | **Java** | Application logic |
 | **Android Studio** | Development Environment |
 | **Android SDK** | Core mobile framework |
-| **Google Maps API** | Map visualization |
-| **GPS / Location Services** | Real-time tracking |
+| **WebView + Leaflet.js** | Interactive map rendering inside Android |
+| **OpenStreetMap (OSM)** | Map data provider |
+| **GPS / Location Services** | Real-time location tracking |
 
 ---
 
@@ -78,11 +81,19 @@ git clone https://github.com/GAYATHRI-475/Bus-Tracking-App.git
 
 ### 3️⃣ Configure API Key
 
-If using Google Maps:
+Since the project uses Leaflet with OpenStreetMap:
 
-- Add your **Google Maps API key** inside:
-  - `AndroidManifest.xml`
-  - OR `res/values/strings.xml`
+- No API key is required.
+- Load the Leaflet map inside an HTML file.
+- Add OpenStreetMap tile layer:
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+
+- Display the map inside Android using WebView.
+- Pass latitude & longitude from Java to JavaScript to update the bus marker.
 
 ### 4️⃣ Enable Location Services
 
