@@ -79,7 +79,7 @@ git clone https://github.com/GAYATHRI-475/Bus-Tracking-App.git
 - Click **Open Existing Project**  
 - Select the cloned folder  
 
-### 3️⃣ Configure API Key
+### 3️⃣ Configure Map Setup
 
 Since the project uses Leaflet with OpenStreetMap:
 
