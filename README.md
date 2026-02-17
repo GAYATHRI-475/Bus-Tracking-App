@@ -85,7 +85,7 @@ Since the project uses Leaflet with OpenStreetMap:
 
 - No API key is required.
 - Load the Leaflet map inside an HTML file.
-- Add OpenStreetMap tile layer:
+- Add OpenStreetMap tile layer
 ```
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
